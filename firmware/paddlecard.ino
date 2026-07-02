@@ -58,13 +58,13 @@ void setup() {
 }
 
 void loop() {
-  // Serial.print("DIT: "); Serial.print(touchRead(PIN_DIT_TOUCH));
-  // Serial.print("DAH: "); Serial.println(touchRead(PIN_DAH_TOUCH));
+  // Serial.print("DIT: "); Serial.print(touchRead(PIN_DIT));
+  // Serial.print("DAH: "); Serial.println(touchRead(PIN_DAH));
 
   // PARIS timing? 
   // https://morsecode.world/international/timing/ 
   int wpm = currentWPM();
-  int ditMs = (60 / (50 * wpm)) * 1000   
+  int ditMs = 1200 / wpm;   
   int dahMs = ditMs * 3;
 
   if (isTouched(PIN_DIT)) {
